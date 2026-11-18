@@ -135,6 +135,9 @@
     .env-card { margin-top: 24px; }
     .env-shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; background: var(--ink); }
     .env-shots .media { flex: none; }
+    /* Lacquer: two Maya screenshots under its text (0037). */
+    .ui-shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px; border-top: 3px solid var(--ink); background: var(--ink); }
+    .ui-shots .media { flex: none; aspect-ratio: 2560 / 1421; }
     /* The Aquarium: three square stills under its video (0027). */
     .square-shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3px; padding-top: 3px; background: var(--ink); }
     .square-shots .media { flex: none; aspect-ratio: 1 / 1; }
@@ -173,7 +176,7 @@
     /* Lilita One has no İ or Ş: its own "." and "¸" are set on I and S. */
     .dot, .cedilla { position: relative; display: inline-block; }
     .dot::after, .cedilla::after { position: absolute; left: 50%; transform: translateX(-50%); }
-    .dot::after { content: "."; top: -.65em; }
+    .dot::after { content: "."; font-size: .82em; top: -.73em; } /* the size and gap of Lilita’s own i dot, above the I (0038) */
     .cedilla::after { content: "\00B8"; top: 0; }
     @media (min-width: 1100px) {
       .tech-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
@@ -212,6 +215,7 @@
       nav { gap: 16px; }
     }
     @media (max-width: 759px) {
+      .ui-shots { grid-template-columns: minmax(0, 1fr); }
       body { font-size: 16px; }
       h3 { font-size: 19px; }
       .label, .tags, .year { font-size: 12px; }
@@ -544,20 +548,11 @@
         <p class="lead"><span lang="en">I work on shaders and tools for the art I make.</span><span lang="tr">Kendi işlerim için shader ve araçlar da hazırlıyorum.</span></p>
         <div class="tech-grid">
           <article class="card media-card tech-wide">
-            <div class="media">
-              <button class="media-open" type="button" aria-label="Open Shader Library — Maya, Unity &amp; Unreal" data-tr-aria-label="Büyüt: Shader Library — Maya, Unity &amp; Unreal">
-                <img loading="lazy" src="./media/lacquer-island-01.webp" alt="Shader Library — Maya, Unity &amp; Unreal" data-tr-alt="Shader Library — Maya, Unity &amp; Unreal" decoding="async">
-              </button>
+            <div class="caption"><h3 translate="no" lang="en-US">Shader Library — Maya, Unity &amp; Unreal</h3><p><span lang="en">Lacquer is a free shader library that turns Maya’s viewport into a real-time render engine: you describe the look to an AI agent, it writes the shader, and you fine-tune it with sliders in a panel. In the future it will become a C++ core independent of Maya, and the same look will work exactly the same in Unity and Unreal.</span><span lang="tr">Lacquer, Maya’nın viewport’unu gerçek zamanlı bir render motoruna çeviren ücretsiz bir shader kütüphanesidir: görünümü bir yapay zekâ ajanına anlatırsınız, shader’ı o yazar, siz panelden kaydırıcılarla ayarlarsınız. Gelecekte Maya’dan bağımsız bir C++ çekirdeğine dönüşecek ve aynı görünüm Unity ile Unreal’da da birebir çalışacak.</span></p><p class="tags">Slang · Maya · Unity · Unreal</p></div>
+            <div class="ui-shots">
+              <div class="media"><button class="media-open" type="button" aria-label="Open Lacquer in Maya — glass and plastic" data-tr-aria-label="Büyüt: Maya’da Lacquer — cam ve plastik"><img src="./media/lacquer-ui-coffee-01.webp" alt="Lacquer in Maya’s viewport: a coffee machine and a food processor in glass and plastic, the Lacquer panel on the right" data-tr-alt="Maya viewport’unda Lacquer: cam ve plastikten bir kahve makinesi ve mutfak robotu, sağda Lacquer paneli" decoding="async" loading="lazy"></button></div>
+              <div class="media"><button class="media-open" type="button" aria-label="Open Lacquer in Maya — the kitchen" data-tr-aria-label="Büyüt: Maya’da Lacquer — mutfak"><img src="./media/lacquer-ui-kitchen-01.webp" alt="Lacquer in Maya’s viewport: a sunlit kitchen with a dining table and a dog, the Lacquer panel on the right" data-tr-alt="Maya viewport’unda Lacquer: güneş alan bir mutfak, yemek masası ve bir köpek, sağda Lacquer paneli" decoding="async" loading="lazy"></button></div>
             </div>
-            <div class="caption"><h3 translate="no" lang="en-US">Shader Library — Maya, Unity &amp; Unreal</h3><p><span lang="en">This open-source shader library gives the same looks in the Maya viewport, Unity and Unreal, including toon water, jelly, lava and glass. I designed the looks and presets; AI coding agents wrote the shader code under my direction.</span><span lang="tr">Bu açık kaynak shader kütüphanesi, toon su, jöle, lav ve cam gibi görünümleri Maya viewport’unda, Unity’de ve Unreal’da aynı şekilde veriyor. Görünümleri ve preset’leri ben tasarladım; shader kodunu benim yönlendirmemle yapay zekâ araçları yazdı.</span></p><p class="tags">Slang · Maya · Unity · Unreal</p></div>
-          </article>
-          <article class="card media-card tech-detail">
-            <div class="media">
-              <button class="media-open" type="button" aria-label="Open Toon Shader — Cel Interior" data-tr-aria-label="Büyüt: Toon Shader — Cel Interior">
-                <img loading="lazy" src="./media/lacquer-interior-01.webp" alt="Toon Shader — Cel Interior" data-tr-alt="Toon Shader — Cel Interior" decoding="async">
-              </button>
-            </div>
-            <div class="caption"><h3 translate="no" lang="en-US">Toon Shader — Cel Interior</h3><p><span lang="en">I used the same toon preset throughout this room.</span><span lang="tr">Bu odanın tamamında aynı toon preset’ini kullandım.</span></p><p class="tags">Maya viewport</p></div>
           </article>
           
           <article class="card media-card tech-half">
